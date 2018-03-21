@@ -1,0 +1,17 @@
+version: '3'
+services:
+  pi-hole:
+    image: diginc/pi-hole-multiarch:debian_armhf
+    container_name: pi-hole
+    restart: unless-stopped
+    ports:
+     - "53:53/tcp"
+     - "53:53/udp"
+     - "80:80"
+    environment:
+      ServerIP: 192.168.0.106
+      WEBPASSWORD: pi123
+      TZ: America/Bogota
+    volumes:
+      - ./pi-hole-volumes/pihole:/etc/pihole/
+      - ./pi-hole-volumes/dnsmasq.d:/etc/dnsmasq.d/
