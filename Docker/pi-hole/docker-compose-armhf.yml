@@ -1,7 +1,7 @@
 version: '3'
 services:
   pi-hole:
-    image: diginc/pi-hole:debian_v3.3
+    image: diginc/pi-hole-multiarch:debian_armhf
     # No es necesario
     #container_name: pi-hole
     restart: unless-stopped
@@ -10,7 +10,7 @@ services:
      - 53:53/udp
      - 80:80
     environment:
-      ServerIP: 192.168.0.102
+      ServerIP: 192.168.0.106
       WEBPASSWORD: pi123
       TZ: America/Bogota
     volumes:
