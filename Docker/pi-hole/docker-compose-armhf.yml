@@ -1,7 +1,7 @@
 version: '3'
 services:
   pi-hole:
-    image: diginc/pi-hole:debian_v3.3
+    image: diginc/pi-hole-multiarch:v3.3_debian_armhf
     # No es necesario
     #container_name: pi-hole
     restart: unless-stopped
