@@ -10,7 +10,7 @@ services:
      - 53:53/udp
      - 80:80
     environment:
-      ServerIP: 192.168.0.102
+      ServerIP: $IP
       WEBPASSWORD: pi123
       TZ: America/Bogota
     volumes:

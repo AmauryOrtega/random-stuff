@@ -15,3 +15,4 @@ then
 	IP="$(ip addr show eth0 | awk '/inet / {print$2}' | cut -d/ -f1)"
 fi
 echo "IP: "$IP
+export IP
