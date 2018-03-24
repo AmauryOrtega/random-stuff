@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ui:
+    image: portainer/portainer:linux-arm-1.16.4
+    ports:
+      - 9000:9000
+    #expose:
+    #  - 9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
