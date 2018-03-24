@@ -7,7 +7,10 @@ then
 	if [[ ! -z $1 ]]
 	then
 		INTERFAZ=$1
-	fi
+    else
+        echo "No se proporciono una interfaz, se utilizara "$INTERFAZ"."
+        echo "En caso que quiera usar otra, usar source "$0" [INTERFAZ]"
+    fi
 	IP="$(ip addr show $INTERFAZ | awk '/inet / {print$2}' | cut -d/ -f1)"
 elif [[ $(uname -m) = "armv7l" ]]
 then
