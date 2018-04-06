@@ -9,6 +9,9 @@ services:
      - 53:53/tcp
      - 53:53/udp
      - 80:80
+    # Por si se quieren poner las env variables en un archivo .env
+    #env_file:
+    #  - .env
     environment:
       ServerIP: $IP
       WEBPASSWORD: pi123
