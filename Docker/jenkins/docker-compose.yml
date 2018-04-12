@@ -1,11 +1,16 @@
-version: "2"
-
+version: '3'
 services:
   jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins_server
     restart: always
-    build: . 
+    environment:
+      JAVA_OPTS: "-Djava.awt.headless=true"
     ports:
       - 8080:8080
+      - 5000:5000
     volumes:
-      - /mnt/archive/jenkins:/usr/local/jenkins
+      - vol:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
+volumes:
+  vol:
