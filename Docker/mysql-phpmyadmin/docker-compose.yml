@@ -1,0 +1,38 @@
+version: "3"
+services:
+    mysql:
+      image: mysql:5.7.22
+      environment:
+        - MYSQL_USER=aroc
+        - MYSQL_PASSWORD=aroc123
+        - MYSQL_DATABASE=mi-base-de-datos
+        - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      
+      # Solo exponer si se quiere acceso directo a mysql
+      # phpmyadmin tendra acceso a traves de la red back-end 
+      # por lo que no necesita el puerto 3306 expuesto
+      #ports:
+      #  - "3306:3306"
+
+      # No es neceario porque la imagen mysql:5.7.22 ya incluye un expose
+      #expose:
+      #  - "3306"
+      networks:
+        - back-end
+    phpmyadmin:
+      image: phpmyadmin/phpmyadmin:4.7
+      environment:
+        - MYSQL_ROOT_PASSWORD
+        - MYSQL_USER=aroc
+        - MYSQL_PASSWORD=aroc123
+        - PMA_HOST=mysql
+      ports:
+        - "8080:80"
+      networks:
+        - back-end
+        - front-end
+      depends_on:
+        - mysql
+networks:
+    back-end:
+    front-end:
