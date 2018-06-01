@@ -2,17 +2,11 @@
 
 Las aplicaciones siempre deben responder correctamente si la BD no esta disponible. [Referencia](https://docs.docker.com/compose/startup-order/)
 
-<<<<<<< HEAD
-## MySQL
-
-### Docker
-=======
 Para ejecutar todo junto `docker-compose up -d`. Y para destruir `docker-compose down`.
 
 >ADVERTENCIA: La imagen mysql utilizada crea volumenes anonimos para almacenar la base de datos, para revisar los volumenes creados `docker volume ls`. Si se desean eliminar todos los volumenes presentes, usar `docker volume prune`.
 
 ## MySQL
->>>>>>> master
 
 ```bash
 docker run --rm --name mysql \
@@ -49,17 +43,8 @@ Generation complete.
 
 ## phpMyAdmin
 
-<<<<<<< HEAD
-### Docker
-```
-docker run --rm --name phpmyadmin -e MYSQL_ROOT_PASSWORD="" -e MYSQL_USER=aroc -e MYSQL_PASSWORD=aroc123 -e PMA_HOST=mysql -p 80:80 phpmyadmin/phpmyadmin:4.7
-```
-```
-docker run --rm --name phpmyadmin -e MYSQL_ROOT_PASSWORD="" -e MYSQL_USER=aroc -e MYSQL_PASSWORD=aroc123 -e PMA_ARBITRARY=1 -p 8080:80 phpmyadmin/phpmyadmin:4.7
-=======
 ```bash
 docker run --rm --name phpmyadmin -e MYSQL_ROOT_PASSWORD="" \
 -e MYSQL_USER=aroc -e MYSQL_PASSWORD=aroc123 -e PMA_ARBITRARY=1 \
 -p 8080:80 phpmyadmin/phpmyadmin:4.7
->>>>>>> master
 ```
