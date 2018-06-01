@@ -4,7 +4,7 @@ Las aplicaciones siempre deben responder correctamente si la BD no esta disponib
 
 Para ejecutar todo junto `docker-compose up -d`. Y para destruir `docker-compose down`.
 
->ADVERTENCIA: La imagen mysql utilizada crea volumenes anonimos para almacenar la base de datos, para revisar los volumenes creados `docker volume ls`. Si se desean eliminar todos los volumenes presentes, usar `docker volume prune`.
+>ADVERTENCIA: La imagen mysql utilizada crea volumenes anonimos para almacenar la base de datos, para revisar los volumenes creados `docker volume ls`. Si se desean eliminar todos los volumenes presentes, usar `docker volume prune`, cuidado que esto puede eliminar volumenes importantes que no esten en uso por algun contenedor.
 
 ## MySQL
 
