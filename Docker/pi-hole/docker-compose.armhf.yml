@@ -9,6 +9,8 @@ services:
      - 53:53/tcp
      - 53:53/udp
      - 80:80
+    # - 67:67/udp #DHCP
+    # - 443:443 #SSL, ver dockerhub para mas info
     # Por si se quieren poner las env variables en un archivo .env
     #env_file:
     #  - .env
