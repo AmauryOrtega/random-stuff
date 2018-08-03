@@ -6,7 +6,7 @@ pi:pi123
 
 ## Upgrade
 
-```
+```shell
 apt update
 apt [upgrade|dist-upgrade]
 ```

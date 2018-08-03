@@ -3,3 +3,10 @@ Docker/pi-hole/pi-hole-volumes
 
 # Volumes of jenkins
 Docker/jenkins/jenkins-volumes
+
+### Code ###
+.vscode/
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+tsconfig.json
+jsconfig.json
