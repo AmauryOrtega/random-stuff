@@ -14,7 +14,7 @@ services:
       #ports:
       #  - "3306:3306"
 
-      # No es neceario porque la imagen mysql:5.7.22 ya incluye un expose
+      # No es necesario porque la imagen mysql:5.7.22 ya incluye un expose
       #expose:
       #  - "3306"
       networks:

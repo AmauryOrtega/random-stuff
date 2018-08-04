@@ -5,7 +5,7 @@ services:
     restart: always
     build: . 
     ports:
-      - 8080:8080
+      - "8080:8080"
     volumes:
       - /mnt/archive/jenkins:/usr/local/jenkins
       - /var/run/docker.sock:/var/run/docker.sock
