@@ -5,8 +5,8 @@ ENV TIME 120
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-COPY src .
-COPY output .
+COPY src ./src
+#COPY output ./output
 #HEALTHCHECK --interval=5m --timeout=3s CMD 
 
 CMD ["python", "src/worker.py"]
