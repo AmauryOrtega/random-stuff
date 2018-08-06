@@ -1,0 +1,7 @@
+version: "3.0"
+services:
+  worker:
+    #image: arm32v7/python:3.7.0-slim-stretch
+    build: .
+  #volumes:
+  #  - "./output:/app/output"
