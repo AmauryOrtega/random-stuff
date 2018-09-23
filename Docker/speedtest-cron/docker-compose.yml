@@ -3,5 +3,10 @@ services:
   worker:
     #image: arm32v7/python:3.7.0-slim-stretch
     build: .
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
+        max-file: "3"
   #volumes:
   #  - "./output:/app/output"
