@@ -1,6 +1,7 @@
-version "3"
+version: "3.0"
 services:
-  speedtest:
-    image: arm32v7/python:3.7.0-slim-stretch
-  volumes:
-    - "./output:/app/output"
+  worker:
+    #image: arm32v7/python:3.7.0-slim-stretch
+    build: .
+  #volumes:
+  #  - "./output:/app/output"
