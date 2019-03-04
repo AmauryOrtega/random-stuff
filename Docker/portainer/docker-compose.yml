@@ -1,7 +1,8 @@
 version: '3'
 services:
   ui:
-    image: portainer/portainer:1.19.2
+    container_name: portainer
+    image: portainer/portainer:1.20.1
     restart: unless-stopped
     ports:
       - "${IP:?err}:9000:9000"
