@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  web:
+    image: nginx:1.17.1-alpine
+    volumes:
+      - ./sites:/etc/nginx/conf.d/:ro
+      - /path/to/webdir/:/usr/share/nginx/html/:ro
+    ports:
+      - "80:80"
