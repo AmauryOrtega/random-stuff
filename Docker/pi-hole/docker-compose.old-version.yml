@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+  app:
+    image: pihole/pihole:4.3.1-4
+    ports:
+      # DNS Service
+      - "53:53/tcp"
+      - "53:53/udp"
+      # Web Service
+      - "80:80/tcp"
+      - "443:443/tcp"
+      # DHCP Service
+      # - "67:67/udp"
+    environment:
+      # - ServerIP=192.168.1.105
+      - WEBPASSWORD=some_random_password
+      - TZ=Europe/Amsterdam
+    volumes:
+      - app_config:/etc/pihole/
+      - dns_config:/etc/dnsmasq.d/
+    # DNS Settings for the pi-hole service
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
+    restart: unless-stopped
+    # Uncomment the below 2 lines when DHCP Service is used
+    # cap_add:
+    #   - NET_ADMIN
+
+volumes:
+  app_config:
+  dns_config:
